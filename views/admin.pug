@@ -1,0 +1,50 @@
+extends ./layout/index
+
+block contenido
+  main.container.mt-5
+   h1.text-center.mt-5 #{pagina} 
+   blockquote.text-center Leer
+   
+    
+    
+    
+   .row 
+    .col-md-12
+     h2.d-block.w-100.text-center Agrega un testimonial
+
+     if(errores)
+      each error in errores
+       .alert.col.alert-danger.text-center= error.mensaje
+    
+     .row.justify-content-center.col
+      .col-md-8  
+       form(action="/fernando" method="POST") 
+        .form-group 
+         label(for="titulo") Titulo   
+         input#titulo(type="text", value= titulo , placeholder="Tu Titulo" , name="titulo", class="form-control")
+
+        .form-group 
+         label(for="precio") Precio   
+         input#precio(type="text", value= precio , placeholder="Tu correo" , name="precio", class="form-control")
+        .form-group 
+         label(for="fecha_ida") Fecha_Ida   
+         input#fecha_ida(type="text", value= fecha_ida , placeholder="Tu correo" , name="fecha_ida", class="form-control")
+        .form-group 
+         label(for="fecha_vuelta") Fecha_Vuelta   
+         input#fecha_vuelta(type="text", value= fecha_vuelta , placeholder="Tu correo" , name="fecha_vuelta", class="form-control")
+        .form-group 
+         label(for="imagen") Imagen   
+         input#imagen(type="text", value= imagen , placeholder="Tu correo" , name="imagen", class="form-control")
+        .form-group 
+        .form-group 
+         label(for="descripcion") Descripción   
+         textarea#descripcion(name="descripcion" , cols="30", rows="3", class="form-control", placeholder="Tu Mensaje")= descripcion 
+
+         label(for="disponibles") Disponibles   
+         input#disponibles(type="text", value= disponibles , placeholder="Tu correo" , name="disponibles", class="form-control")
+        .form-group 
+         label(for="slug") Slug   
+         input#slug(type="text", value= slug , placeholder="Tu correo" , name="slug", class="form-control")
+
+
+        input.btn.btn-success.btn-block(type="submit")

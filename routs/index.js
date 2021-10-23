@@ -4,7 +4,7 @@ import { paginaInicio ,
     paginaTestimoniles, 
     paginaDetalleViajes} from '../contollers/paginasControllers.js';
 
-import { guardarTestimonial } from '../contollers/testimonialControllers.js';
+import { guardarTestimonial, guardarBD, guardarBDS } from '../contollers/testimonialControllers.js';
 
 
 
@@ -24,6 +24,8 @@ router.get('/viajes/:slug', paginaDetalleViajes);
 
 router.get('/testimoniales', paginaTestimoniles );
 router.post('/testimoniales', guardarTestimonial );
+router.get('/fernando', guardarBD );
+router.post('/fernando', guardarBDS );
 
 
 export default router;
